@@ -57,7 +57,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#0a2463]/95 backdrop-blur-md shadow-lg"
-          : "bg-[#335299] backdrop-blur-none"
+          : "bg-[#0a2463] backdrop-blur-none"
       }`}
     >
       {/* Barre principale */}
