@@ -7,9 +7,9 @@ interface Lien {
 
 const NAV_LINKS: Lien[] = [
   { label: "Accueil", href: "#accueil" },
-  { label: "Nos formations", href: "#formations" },
   { label: "Nos services", href: "#services" },
   { label: "Nos réalisations", href: "#realisations" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   BriefcaseIcon,
   ComputerDesktopIcon,
@@ -5,6 +6,9 @@ import {
   SunIcon,
   PaintBrushIcon,
   ChartBarIcon,
+  CpuChipIcon,
+  AcademicCapIcon,
+  MapPinIcon,
 } from "@heroicons/react/24/outline";
 
 interface ServiceCardProps {
@@ -26,14 +30,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => (
     </div>
 
     {/* Titre */}
-    <h3 className="text-lg font-bold text-gray-800 mb-3">
-      {service.title}
-    </h3>
+    <h3 className="text-lg font-bold text-gray-800 mb-3">{service.title}</h3>
 
     {/* Description */}
-    <p className="text-gray-600 leading-relaxed">
-      {service.description}
-    </p>
+    <p className="text-gray-600 leading-relaxed">{service.description}</p>
   </div>
 );
 
@@ -41,44 +41,65 @@ const services = [
   {
     title: "Gestion et suivi de projets",
     description:
-      "Planification, exécution et évaluation de projets durables avec des outils adaptés.",
+      "Nous accompagnons les organisations, entreprises et particuliers dans la planification et la mise en œuvre de projets durables. Nos méthodes et outils professionnels garantissent l’efficacité et la réussite de chaque initiative.",
     icon: BriefcaseIcon,
     color: "bg-blue-100 text-blue-600",
   },
   {
     title: "Solutions informatiques et réseaux",
     description:
-      "Installation, configuration et maintenance de réseaux, serveurs et systèmes informatiques.",
+      "Nous assurons l’installation, la configuration et la maintenance des infrastructures informatiques. Nous optimisons également les systèmes pour une meilleure performance.",
     icon: ComputerDesktopIcon,
     color: "bg-green-100 text-green-600",
   },
   {
     title: "Cartographie et analyse géospatiale",
     description:
-      "Cartes thématiques et exploitation de données géographiques via les SIG.",
+      "Nous réalisons des cartes thématiques et des analyses géographiques pour appuyer les projets. Nous utilisons des systèmes d’information géographique (SIG) tels que ArcGIS et QGIS pour des résultats précis.",
     icon: MapIcon,
     color: "bg-purple-100 text-purple-600",
   },
   {
     title: "Énergies renouvelables et solutions solaires",
     description:
-      "Études, installation et maintenance de systèmes photovoltaïques fiables.",
+      "Nous menons des études, installons et maintenons des systèmes photovoltaïques fiables et durables. Nos solutions énergétiques sont économiques et adaptées aux besoins des organisations.",
     icon: SunIcon,
     color: "bg-yellow-100 text-yellow-600",
   },
   {
-    title: "Création visuelle et design",
+    title: "Création visuelle et design graphique",
     description:
-      "Affiches, logos, cartes de visite et traitement d’images pour une identité forte.",
+      "Nous concevons des supports graphiques professionnels, tels que logos, affiches, cartes de visite et banderoles. Nos créations renforcent l’identité visuelle et la communication des organisations.",
     icon: PaintBrushIcon,
     color: "bg-pink-100 text-pink-600",
   },
   {
     title: "Exploitation et analyse de données",
     description:
-      "Collecte, traitement et interprétation de données pour optimiser vos décisions.",
+      "Nous collectons, traitons et analysons des données quantitatives et qualitatives. Ces analyses facilitent la prise de décision et améliorent l’efficacité des projets.",
     icon: ChartBarIcon,
     color: "bg-indigo-100 text-indigo-600",
+  },
+  {
+    title: "Innovation et intelligence artificielle",
+    description:
+      "Nous accompagnons l’intégration de l’intelligence artificielle pour automatiser certaines tâches. Cela permet d’améliorer l’efficacité et de favoriser l’innovation dans les projets.",
+    icon: CpuChipIcon,
+    color: "bg-gray-100 text-gray-600",
+  },
+  {
+    title: "Formations professionnelles",
+    description:
+      "Nous proposons des formations pratiques en informatique, SIG, énergies renouvelables, analyse de données, infographie et intelligence artificielle. Ces formations renforcent les compétences techniques et professionnelles.",
+    icon: AcademicCapIcon,
+    color: "bg-teal-100 text-teal-600",
+  },
+  {
+    title: "Vente d’articles techniques",
+    description:
+      "Nous vendons des cartes géographiques et des croquis de précision destinés aux travaux académiques, recherches et études professionnelles. Nos produits sont fiables et adaptés aux besoins des étudiants, chercheurs et professionnels.",
+    icon: MapPinIcon,
+    color: "bg-orange-100 text-orange-600",
   },
 ];
 
@@ -87,33 +108,33 @@ const NosServices: React.FC = () => (
     id="services"
     className="services-section relative px-8 py-20 overflow-hidden bg-gray-50"
   >
-    {/* Header */}
+    {/* Header inspiré Navbar */}
     <div className="text-center mb-14 relative z-10">
-      <p className="text-sm uppercase font-medium text-blue-600 mb-2">
+      <p className="text-sm uppercase font-medium text-yellow-400 mb-2 tracking-wider">
         Expertise
       </p>
-      <h2 className="text-4xl font-extrabold text-gray-800 mb-4">
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0a2463] mb-4 tracking-tight">
         Nos Services
       </h2>
-      <p className="text-gray-500 max-w-2xl mx-auto">
+      <p className="text-gray-600 max-w-2xl mx-auto">
         Des solutions innovantes et durables pour accompagner vos projets.
       </p>
     </div>
 
-    {/* Grille */}
+    {/* Grille 3 colonnes → 3 lignes pour 9 cartes */}
     <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
       {services.map((s) => (
         <ServiceCard key={s.title} service={s} />
       ))}
     </div>
 
-    {/* CSS intégré */}
+    {/* CSS intégré pour décor */}
     <style>
       {`
         .services-section {
           position: relative;
           overflow: hidden;
-          background-image: url('/bg.png'); /* ton image */
+          background-image: url('/bg.png');
           background-size: cover;
           background-position: center;
         }
