@@ -108,37 +108,39 @@ const NosServices: React.FC = () => (
     </div>
 
     {/* CSS intégré */}
-    <style jsx>{`
-      .services-section {
-        position: relative;
-        overflow: hidden;
-        background-image: url('/bg.png'); /* <-- ton image */
-        background-size: cover;
-        background-position: center;
-      }
-      .services-section::before {
-        content: '';
-        position: absolute;
-        top: -100px;
-        right: -100px;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background-color: rgba(0, 51, 102, 0.08); /* bleu clair */
-        z-index: 0;
-      }
-      .services-section::after {
-        content: '';
-        position: absolute;
-        bottom: -100px;
-        left: -100px;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background-color: rgba(255, 200, 0, 0.1); /* jaune clair */
-        z-index: 0;
-      }
-    `}</style>
+    <style>
+      {`
+        .services-section {
+          position: relative;
+          overflow: hidden;
+          background-image: url('/bg.png'); /* ton image */
+          background-size: cover;
+          background-position: center;
+        }
+        .services-section::before {
+          content: '';
+          position: absolute;
+          top: -100px;
+          right: -100px;
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+          background-color: rgba(0, 51, 102, 0.08);
+          z-index: 0;
+        }
+        .services-section::after {
+          content: '';
+          position: absolute;
+          bottom: -100px;
+          left: -100px;
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+          background-color: rgba(255, 200, 0, 0.1);
+          z-index: 0;
+        }
+      `}
+    </style>
   </section>
 );
 
