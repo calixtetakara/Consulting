@@ -30,7 +30,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => (
     </div>
 
     {/* Titre */}
-    <h3 className="text-lg font-bold text-gray-800 mb-3">{service.title}</h3>
+    <h3 className="text-xl font-bold text-gray-800 mb-3">{service.title}</h3>
 
     {/* Description */}
     <p className="text-gray-600 leading-relaxed">{service.description}</p>
@@ -90,14 +90,14 @@ const services = [
   {
     title: "Formations professionnelles",
     description:
-      "Nous proposons des formations pratiques en informatique, SIG, énergies renouvelables, analyse de données, infographie et intelligence artificielle. Ces formations renforcent les compétences techniques et professionnelles.",
+      "Nous proposons des formations pratiques en informatique, SIG, énergies renouvelables, analyse de données et intelligence artificielle. Elles permettent de développer des compétences solides et adaptées au monde professionnel.",
     icon: AcademicCapIcon,
     color: "bg-teal-100 text-teal-600",
   },
   {
     title: "Vente d’articles techniques",
     description:
-      "Nous vendons des cartes géographiques et des croquis de précision destinés aux travaux académiques, recherches et études professionnelles. Nos produits sont fiables et adaptés aux besoins des étudiants, chercheurs et professionnels.",
+      "Nous mettons à disposition des cartes géographiques et croquis de précision pour les travaux académiques et professionnels. Nos supports sont fiables et adaptés aux différents usages.",
     icon: MapPinIcon,
     color: "bg-orange-100 text-orange-600",
   },
@@ -113,7 +113,7 @@ const NosServices: React.FC = () => (
       <p className="text-sm uppercase font-medium text-yellow-400 mb-2 tracking-wider">
         Expertise
       </p>
-      <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0a2463] mb-4 tracking-tight">
+      <h2 className="text-4xl sm:text-5xl  font-extrabold text-[#0a2463] mb-4 tracking-tight">
         Nos Services
       </h2>
       <p className="text-gray-600 max-w-2xl mx-auto">
@@ -122,7 +122,7 @@ const NosServices: React.FC = () => (
     </div>
 
     {/* Grille 3 colonnes → 3 lignes pour 9 cartes */}
-    <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+    <div className="relative z-10  text-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
       {services.map((s) => (
         <ServiceCard key={s.title} service={s} />
       ))}

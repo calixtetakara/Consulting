@@ -28,7 +28,7 @@ function MobileNavLink({ lien, onClick }: { lien: Lien; onClick: (href: string) 
   return (
     <button
       onClick={() => onClick(lien.href)}
-      className="bg-transparent border-none cursor-pointer text-white text-sm font-medium tracking-wide py-2 px-4 w-full text-center border-b border-white/10 transition-colors duration-200 hover:text-yellow-400"
+      className="bg-transparent border-none cursor-pointer text-white text-base font-medium tracking-wide py-2 px-4 w-full text-center border-b border-white/10 transition-colors duration-200 hover:text-yellow-400"
     >
       {lien.label}
     </button>

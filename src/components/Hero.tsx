@@ -60,7 +60,7 @@ export default function HeroSlider() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
@@ -91,10 +91,10 @@ export default function HeroSlider() {
           >
             {/* Contenu du slide — responsive via breakpoints Tailwind */}
             <div className="container hero-animate w-full max-w-3xl mx-auto text-center text-white px-5 sm:px-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight mb-5">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold leading-tight mb-5">
                 {slide.title}
               </h1>
-              <p className="text-base sm:text-lg md:text-xl mb-8">
+              <p className="text-lg sm:text-xl md:text-2xl mb-8">
                 {slide.description}
               </p>
 
