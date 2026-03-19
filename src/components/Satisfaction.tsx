@@ -1,38 +1,31 @@
-import {
-  UserGroupIcon,
-  StarIcon,
-  TrophyIcon,
-  BriefcaseIcon,
-} from "@heroicons/react/24/outline";
-
 const stats = [
   {
-    icon: UserGroupIcon,
+    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&q=80",
     value: "150+",
     label: "Clients accompagnés",
     sublabel: "dans tous les domaines",
-    color: "bg-blue-100 text-blue-600",
+    gradient: "from-blue-900 to-blue-700",
   },
   {
-    icon: StarIcon,
+    image: "https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=400&q=80",
     value: "93%",
     label: "Taux de satisfaction",
     sublabel: "obtenu de nos clients",
-    color: "bg-yellow-100 text-yellow-600",
+    gradient: "from-yellow-700 to-yellow-500",
   },
   {
-    icon: TrophyIcon,
+    image: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=400&q=80",
     value: "4.9",
     label: "Note moyenne",
     sublabel: "sur 5 par nos partenaires",
-    color: "bg-purple-100 text-purple-600",
+    gradient: "from-purple-900 to-purple-700",
   },
   {
-    icon: BriefcaseIcon,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
     value: "50+",
     label: "Projets réalisés",
     sublabel: "en cartographie, énergie & SI",
-    color: "bg-green-100 text-green-600",
+    gradient: "from-emerald-800 to-emerald-600",
   },
 ];
 
@@ -95,28 +88,47 @@ export default function ImpactEnChiffres() {
         {stats.map((stat, index) => (
           <div
             key={index}
-            className="group bg-white rounded-2xl shadow-md p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="group bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-[#0a2463]/[0.06]"
           >
-            {/* Icône */}
-            <div
-              className={`w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-full ${stat.color} transition-transform duration-300 group-hover:scale-110`}
-            >
-              <stat.icon className="w-7 h-7" />
+            {/* Image de tête avec overlay dégradé */}
+            <div className="relative h-40 overflow-hidden">
+              <img
+                src={stat.image}
+                alt={stat.label}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                }}
+              />
+              {/* Overlay dégradé par-dessus l'image */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-t ${stat.gradient} opacity-60`}
+              />
+
+              {/* Valeur chiffrée flottante sur l'image */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <p className="text-5xl font-extrabold text-white drop-shadow-lg tracking-tight">
+                  {stat.value}
+                </p>
+              </div>
+
+              {/* Bande jaune en bas de l'image */}
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-yellow-400" />
             </div>
 
-            {/* Valeur */}
-            <p className="text-5xl font-extrabold text-[#0a2463] mb-2 tracking-tight">
-              {stat.value}
-            </p>
+            {/* Corps de la carte */}
+            <div className="p-5 text-center">
+              <p className="text-base font-extrabold text-[#0a2463] mb-1">
+                {stat.label}
+              </p>
+              <p className="text-sm text-gray-400 leading-relaxed">
+                {stat.sublabel}
+              </p>
 
-            {/* Label */}
-            <p className="text-base font-bold text-gray-700 mb-1">{stat.label}</p>
-
-            {/* Sous-label */}
-            <p className="text-sm text-gray-400 leading-relaxed">{stat.sublabel}</p>
-
-            {/* Barre décorative au bas au hover */}
-            <div className="mt-5 h-1 w-0 group-hover:w-full bg-gradient-to-r from-[#0a2463] to-yellow-400 rounded-full transition-all duration-500 mx-auto" />
+              {/* Barre animée au hover */}
+              <div className="mt-4 h-1 w-0 group-hover:w-full bg-gradient-to-r from-[#0a2463] to-yellow-400 rounded-full transition-all duration-500 mx-auto" />
+            </div>
           </div>
         ))}
       </div>
