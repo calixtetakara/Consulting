@@ -8,6 +8,7 @@ import SolaireDetail from "./components/realisations/Solaire";
 import StagiairesDetail from "./components/realisations/Stagiaires";
 import CollecteDetail from "./components/realisations/Collecte";
 import SIGDetail from "./components/realisations/Sig";
+import ImpactEnChiffres from "./components/Satisfaction";
 
 
 // Page d'accueil regroupant tous les composants principaux
@@ -17,6 +18,7 @@ const Home = () => (
     <HeroSlider />
     <ServicesSection />
     <NosRealisations />
+    <ImpactEnChiffres/>
   </>
 );
 
