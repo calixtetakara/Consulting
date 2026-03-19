@@ -41,21 +41,21 @@ const services = [
   {
     title: "Gestion et suivi de projets",
     description:
-      "Nous accompagnons les organisations, entreprises et particuliers dans la planification et la mise en œuvre de projets durables. Nos méthodes et outils professionnels garantissent l’efficacité et la réussite de chaque initiative.",
+      "Nous accompagnons les organisations, entreprises et particuliers dans la planification et la mise en œuvre de projets durables. Nos méthodes et outils professionnels garantissent l'efficacité et la réussite de chaque initiative.",
     icon: BriefcaseIcon,
     color: "bg-blue-100 text-blue-600",
   },
   {
     title: "Solutions informatiques et réseaux",
     description:
-      "Nous assurons l’installation, la configuration et la maintenance des infrastructures informatiques. Nous optimisons également les systèmes pour une meilleure performance.",
+      "Nous assurons l'installation, la configuration et la maintenance des infrastructures informatiques. Nous optimisons également les systèmes pour une meilleure performance.",
     icon: ComputerDesktopIcon,
     color: "bg-green-100 text-green-600",
   },
   {
     title: "Cartographie et analyse géospatiale",
     description:
-      "Nous réalisons des cartes thématiques et des analyses géographiques pour appuyer les projets. Nous utilisons des systèmes d’information géographique (SIG) tels que ArcGIS et QGIS pour des résultats précis.",
+      "Nous réalisons des cartes thématiques et des analyses géographiques pour appuyer les projets. Nous utilisons des systèmes d'information géographique (SIG) tels que ArcGIS et QGIS pour des résultats précis.",
     icon: MapIcon,
     color: "bg-purple-100 text-purple-600",
   },
@@ -69,21 +69,21 @@ const services = [
   {
     title: "Création visuelle et design graphique",
     description:
-      "Nous concevons des supports graphiques professionnels, tels que logos, affiches, cartes de visite et banderoles. Nos créations renforcent l’identité visuelle et la communication des organisations.",
+      "Nous concevons des supports graphiques professionnels, tels que logos, affiches, cartes de visite et banderoles. Nos créations renforcent l'identité visuelle et la communication des organisations.",
     icon: PaintBrushIcon,
     color: "bg-pink-100 text-pink-600",
   },
   {
     title: "Exploitation et analyse de données",
     description:
-      "Nous collectons, traitons et analysons des données quantitatives et qualitatives. Ces analyses facilitent la prise de décision et améliorent l’efficacité des projets.",
+      "Nous collectons, traitons et analysons des données quantitatives et qualitatives. Ces analyses facilitent la prise de décision et améliorent l'efficacité des projets.",
     icon: ChartBarIcon,
     color: "bg-indigo-100 text-indigo-600",
   },
   {
     title: "Innovation et intelligence artificielle",
     description:
-      "Nous accompagnons l’intégration de l’intelligence artificielle pour automatiser certaines tâches. Cela permet d’améliorer l’efficacité et de favoriser l’innovation dans les projets.",
+      "Nous accompagnons l'intégration de l'intelligence artificielle pour automatiser certaines tâches. Cela permet d'améliorer l'efficacité et de favoriser l'innovation dans les projets.",
     icon: CpuChipIcon,
     color: "bg-gray-100 text-gray-600",
   },
@@ -95,7 +95,7 @@ const services = [
     color: "bg-teal-100 text-teal-600",
   },
   {
-    title: "Vente d’articles techniques",
+    title: "Vente d'articles techniques",
     description:
       "Nous mettons à disposition des cartes géographiques et croquis de précision pour les travaux académiques et professionnels. Nos supports sont fiables et adaptés aux différents usages.",
     icon: MapPinIcon,
@@ -108,12 +108,12 @@ const NosServices: React.FC = () => (
     id="services"
     className="services-section relative px-8 py-20 overflow-hidden bg-gray-50"
   >
-    {/* Header inspiré Navbar */}
+    {/* Header */}
     <div className="text-center mb-14 relative z-10">
       <p className="text-sm uppercase font-medium text-yellow-400 mb-2 tracking-wider">
         Expertise
       </p>
-      <h2 className="text-4xl sm:text-5xl  font-extrabold text-[#0a2463] mb-4 tracking-tight">
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0a2463] mb-4 tracking-tight">
         Nos Services
       </h2>
       <p className="text-gray-600 max-w-2xl mx-auto">
@@ -122,11 +122,20 @@ const NosServices: React.FC = () => (
     </div>
 
     {/* Grille 3 colonnes → 3 lignes pour 9 cartes */}
-    <div className="relative z-10  text-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+    <div className="relative z-10 text-lg grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
       {services.map((s) => (
         <ServiceCard key={s.title} service={s} />
       ))}
     </div>
+
+    {/* ✅ Dégradé de transition vers NosRealisations (fond blanc) */}
+    <div
+      className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none"
+      style={{
+        height: "150px",
+        background: "linear-gradient(to bottom, transparent, #ffffff)",
+      }}
+    />
 
     {/* CSS intégré pour décor */}
     <style>
