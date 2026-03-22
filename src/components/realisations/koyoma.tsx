@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const images = [
   "/Koyoma4.jpeg",
   "/Koyoma1.jpeg",
-  "/Koyoma2.jpeg",
-  "/Koyoma3.jpeg",
+  "/CarteForet.jfif",
+  "/koyoma2.jpeg",
 ];
 
 const activites = [
@@ -18,33 +18,33 @@ const activites = [
 // ── Icônes SVG propres (style ligne fine, cohérent)
 const IconMap = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
-    <line x1="9" y1="3" x2="9" y2="18"/>
-    <line x1="15" y1="6" x2="15" y2="21"/>
+    <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+    <line x1="9" y1="3" x2="9" y2="18" />
+    <line x1="15" y1="6" x2="15" y2="21" />
   </svg>
 );
 
 const IconChart = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="20" x2="18" y2="10"/>
-    <line x1="12" y1="20" x2="12" y2="4"/>
-    <line x1="6" y1="20" x2="6" y2="14"/>
-    <line x1="2" y1="20" x2="22" y2="20"/>
+    <line x1="18" y1="20" x2="18" y2="10" />
+    <line x1="12" y1="20" x2="12" y2="4" />
+    <line x1="6" y1="20" x2="6" y2="14" />
+    <line x1="2" y1="20" x2="22" y2="20" />
   </svg>
 );
 
 const IconGlobe = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"/>
-    <line x1="2" y1="12" x2="22" y2="12"/>
-    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    <circle cx="12" cy="12" r="10" />
+    <line x1="2" y1="12" x2="22" y2="12" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
   </svg>
 );
 
 const IconLeaf = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
-    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
+    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
   </svg>
 );
 
@@ -197,9 +197,8 @@ const KoyomaDetail: React.FC = () => {
                 <button
                   key={i}
                   onClick={() => setLightbox(i)}
-                  className={`relative aspect-[4/3] rounded-xl overflow-hidden group border-2 transition-all duration-300 ${
-                    activeImg === i ? "border-yellow-400 scale-[1.01]" : "border-transparent"
-                  }`}
+                  className={`relative aspect-[4/3] rounded-xl overflow-hidden group border-2 transition-all duration-300 ${activeImg === i ? "border-yellow-400 scale-[1.01]" : "border-transparent"
+                    }`}
                 >
                   <img
                     src={src}
@@ -257,11 +256,10 @@ const KoyomaDetail: React.FC = () => {
                 <button
                   key={i}
                   onClick={() => setActiveImg(i)}
-                  className={`aspect-square rounded-lg overflow-hidden border-2 transition-all duration-200 ${
-                    activeImg === i
+                  className={`aspect-square rounded-lg overflow-hidden border-2 transition-all duration-200 ${activeImg === i
                       ? "border-yellow-400 ring-2 ring-yellow-400/30"
                       : "border-transparent opacity-60 hover:opacity-100"
-                  }`}
+                    }`}
                 >
                   <img src={src} alt="" className="w-full h-full object-cover" />
                 </button>

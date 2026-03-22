@@ -9,7 +9,7 @@ const NAV_LINKS: Lien[] = [
   { label: "Accueil", href: "#accueil" },
   { label: "Nos services", href: "#services" },
   { label: "Nos réalisations", href: "#realisations" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Nos Résultats", href: "#resultats" },
   { label: "Contact", href: "#contact" },
 ];
 

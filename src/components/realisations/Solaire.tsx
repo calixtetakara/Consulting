@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 // ── Remplace les noms de fichiers et descriptions par les tiens
 const gallery = [
   { src: "/InstallationP.Solaire.jpeg", caption: "Installation de panneaux solaires à Lomé" },
-  { src: "/Solaire2.jpeg",              caption: "Maintenance de panneaux solaires à Kara" },
-  { src: "/Solaire3.jpeg",              caption: "Mise en service d'un système photovoltaïque" },
-  { src: "/Solaire4.jpeg",              caption: "Installation sur toiture résidentielle" },
-  { src: "/Solaire5.jpeg",              caption: "Équipe technique en intervention" },
-  { src: "/Solaire6.jpeg",              caption: "Système solaire autonome installé" },
+  { src: "/InstPan.jfif",              caption: "Maintenance de panneaux solaires à Kara" },
+  { src: "/DepanL.jfif",              caption: "Mise en service d'un système photovoltaïque" },
+  { src: "/installPan.jfif",              caption: "Installation sur toiture résidentielle" },
+  { src: "/instPann.jfif",              caption: "Équipe technique en intervention" },
+  { src: "/Pann.jfif",              caption: "Système solaire autonome installé" },
 ];
 
 const activites = [

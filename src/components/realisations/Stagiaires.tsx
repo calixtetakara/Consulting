@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const images = [
   "/Stagaires.jpeg",
-  "/Stagaires2.jpeg",
-  "/Stagaires3.jpeg",
-  "/Stagaires4.jpeg",
+  "/stag.jpeg",
+  "/etud.jpeg",
+  "/etud2.jpeg",
 ];
 
 const activites = [

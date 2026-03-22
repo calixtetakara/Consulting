@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 // ── Remplace par tes vrais fichiers
 const gallery = [
   { src: "/carte.jpeg", caption: "Carte thématique — occupation des sols" },
-  { src: "/AcImages/im2.jpg", caption: "Schéma cartographique scolaire" },
+  { src: "/coeur.jpeg", caption: "Schéma cartographique scolaire" },
   { src: "/AcImages/im3.jpg", caption: "Carte administrative — gouvernance locale" },
   { src: "/AcImages/im1.jpg", caption: "Analyse spatiale — ressources naturelles" },
 ];

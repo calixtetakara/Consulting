@@ -31,7 +31,7 @@ const stats = [
 
 export default function ImpactEnChiffres() {
   return (
-    <section className="impact-section relative px-8 py-20 overflow-hidden bg-gray-50">
+    <section id="resultats" className=" relative px-8 py-20 overflow-hidden bg-gray-50">
       <style>{`
         .impact-section {
           position: relative;

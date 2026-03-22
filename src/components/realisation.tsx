@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+
 interface Realisation {
   title: string;
   description: string;
@@ -53,43 +54,48 @@ const NosRealisations: React.FC = () => {
 
   return (
     <section id="realisations" className="relative bg-white py-24 overflow-hidden">
-    
-     
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {/* 2. EN-TÊTE DE SECTION */}
+        {/* Watermark */}
         <span
-        aria-hidden="true"
-        className="pointer-events-none select-none absolute top-8 left-1/2 -translate-x-1/2 text-[clamp(40px,10vw,110px)] font-black tracking-[12px] whitespace-nowrap uppercase text-[#0a2463]/[0.04]"
-      >
-        RÉALISATIONS
-      </span>
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute top-8 left-1/2 -translate-x-1/2 text-[clamp(40px,10vw,110px)] font-black tracking-[12px] whitespace-nowrap uppercase text-[#0a2463]/[0.04]"
+        >
+          RÉALISATIONS
+        </span>
 
-      {/* En-tête */}
-      <div className="text-center mb-14 relative z-10">
-        <p className="text-sm uppercase font-medium text-yellow-400 mb-2 tracking-wider">
-          ✦ Projets ✦
-        </p>
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0a2463] mb-4 tracking-tight">
-          Quelques projets réalisés
-        </h2>
-        <div className="flex items-center justify-center gap-3">
-          <div className="w-8 h-[2px] bg-yellow-400 rounded-full" />
-          <div className="w-3 h-3 rounded-full bg-yellow-400" />
-          <div className="w-8 h-[2px] bg-yellow-400 rounded-full" />
-        </div>
-        <p className="max-w-xl mx-auto text-slate-500 text-base md:text-lg">
+        {/* En-tête */}
+        <div className="text-center mb-14 relative z-10">
+          <p className="text-lg uppercase font-medium text-yellow-400 mb-2 tracking-wider">
+            ✦ Projets ✦
+          </p>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#0a2463] mb-4 tracking-tight">
+            Quelques projets réalisés
+          </h2>
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-8 h-[2px] bg-yellow-400 rounded-full" />
+            <div className="w-3 h-3 rounded-full bg-yellow-400" />
+            <div className="w-8 h-[2px] bg-yellow-400 rounded-full" />
+          </div>
+          <p className="max-w-xl mx-auto text-slate-500 text-base md:text-lg">
             Des solutions innovantes pour répondre aux enjeux technologiques et environnementaux actuels.
           </p>
-      </div>
-        {/* 3. LE MARQUEE SLIDER */}
+        </div>
+
+        {/* Marquee Slider */}
         <div className="relative -mx-6">
-          {/* Masques de dégradé pour les côtés */}
           <div className="flex w-max gap-8 py-4 animate-marquee hover:[animation-play-state:paused]">
             {duplicated.map((item, index) => (
               <div
                 key={index}
-                className="group w-[320px] bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 overflow-hidden"
+                className="group relative w-[320px] bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 overflow-hidden cursor-pointer"
               >
+                {/* ✅ Lien couvrant toute la carte */}
+            <Link
+              to={item.link}
+              className="absolute inset-0 z-10"
+              aria-label={`Voir le projet : ${item.title}`}
+            />
+
                 {/* Image & Badge */}
                 <div className="relative h-56 overflow-hidden">
                   <img
@@ -97,9 +103,7 @@ const NosRealisations: React.FC = () => {
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a2463]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
                   <div className="absolute top-4 left-4">
                     <span className="backdrop-blur-md bg-black/30 border border-white/20 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
                       {item.tag}
@@ -116,15 +120,13 @@ const NosRealisations: React.FC = () => {
                     {item.description}
                   </p>
 
-                  <Link
-                    to={item.link}
-                    className="flex items-center justify-between w-full p-1 pl-4 bg-slate-50 group/btn rounded-full border border-slate-100 hover:bg-[#0a2463] hover:text-white transition-all duration-300"
-                  >
+                  {/* Bouton décoratif (non-cliquable, le Link couvre tout) */}
+                  <div className="flex items-center justify-between w-full p-1 pl-4 bg-slate-50 group-hover:bg-[#0a2463] group-hover:text-white rounded-full border border-slate-100 transition-all duration-300 pointer-events-none">
                     <span className="text-xs font-bold uppercase tracking-wider">Voir le projet</span>
-                    <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-[#0a2463] group-hover/btn:rotate-[-45deg] transition-transform duration-300">
+                    <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center text-[#0a2463] group-hover:rotate-[-45deg] transition-transform duration-300">
                       →
                     </div>
-                  </Link>
+                  </div>
                 </div>
               </div>
             ))}
