@@ -8,7 +8,7 @@ const gallery = [
   { src: "/DepanL.jfif",              caption: "Mise en service d'un système photovoltaïque" },
   { src: "/installPan.jfif",              caption: "Installation sur toiture résidentielle" },
   { src: "/instPann.jfif",              caption: "Équipe technique en intervention" },
-  { src: "/Pann.jfif",              caption: "Système solaire autonome installé" },
+  { src: "/solar8.jpeg",              caption: "Système solaire autonome installé" },
 ];
 
 const activites = [

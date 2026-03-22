@@ -6,6 +6,10 @@ const images = [
   "/Koyoma1.jpeg",
   "/CarteForet.jfif",
   "/koyoma2.jpeg",
+  "/Koyoma8.jpeg",
+  "/For.jfif",
+  "/terrain2.jpeg",
+  "/imo.jpeg",
 ];
 
 const activites = [

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const images = [
   "/Stagaires.jpeg",
-  "/stag.jpeg",
+  "/stage.jpeg",
   "/etud.jpeg",
   "/etud2.jpeg",
 ];
