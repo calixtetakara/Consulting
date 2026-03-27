@@ -6,8 +6,8 @@ const slides = [
     title: "Technologies informatiques générales",
     description:
       "Formations en informatique, bureautique, réseaux et infographie pour maîtriser les outils du quotidien et professionnels.",
-    link: "#contact",
-    btnText: "Nous contacter",
+    link: "#services",
+    btnText: "Découvrir nos services",
   },
   {
     backgroundImage: "url('/Stat.png')",
@@ -30,16 +30,16 @@ const slides = [
     title: "Énergies solaires et solutions innovantes",
     description:
       "Apprenez l'installation solaire, les réseaux WIFI et les systèmes de surveillance modernes pour un futur technologique durable.",
-    link: "#about",
-    btnText: "En savoir plus",
+    link: "#contact",
+    btnText: "Nous contacter",
   },
   {
     backgroundImage: "url('/IA_Accu.jpg')",
     title: "Maîtrisez l'Intelligence Artificielle",
     description:
       "Découvrez les concepts fondamentaux et les applications de l'IA dans le monde moderne",
-    link: "#about",
-    btnText: "En savoir plus",
+    link: "#services",
+    btnText: "Découvrir nos services",
   },
 ];
 
