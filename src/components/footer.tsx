@@ -252,7 +252,7 @@ const Footer: React.FC = () => {
                   <IconMail />
                   <a href="mailto:contact@2spconsulting.tg"
                     className="text-white/55 no-underline transition-colors hover:text-yellow-400 break-all">
-                    contact@2spconsulting.tg
+                    2spcabinet@gmail.com
                   </a>
                 </li>
 

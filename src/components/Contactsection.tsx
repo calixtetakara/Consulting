@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import React, { useState } from "react";
 
 const IconPin = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" style={{ width: 20, height: 20 }}>
@@ -90,42 +90,42 @@ function ContactSection() {
   };
 
   const onSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  if (!validate()) return;
-  setStatus("loading");
-  setErrors({});
+    e.preventDefault();
+    if (!validate()) return;
+    setStatus("loading");
+    setErrors({});
 
-  // LOG pour vérifier les variables d'environnement
-  console.log("Variables d'environnement :", {
-    service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-    template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-    key: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-  });
+    // LOG pour vérifier les variables d'environnement
+    console.log("Variables d'environnement :", {
+      service: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      key: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    });
 
-  try {
-    const result = await emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      {
-        name: form.name,
-        email: form.email,
-        subject: form.subject,
-        message: form.message,
-      },
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    );
+    try {
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-    if (result.status === 200) {
-      setStatus("success");
-      setForm({ name: "", email: "", subject: "", message: "" });
-    } else {
-      throw new Error("Échec de l'envoi");
+      if (result.status === 200) {
+        setStatus("success");
+        setForm({ name: "", email: "", subject: "", message: "" });
+      } else {
+        throw new Error("Échec de l'envoi");
+      }
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
     }
-  } catch (error) {
-    console.error("EmailJS error:", error);
-    setStatus("error");
-  }
-};
+  };
   const ic = (f: keyof FormState) => `csp-input${errors[f] ? " csp-err" : ""}`;
 
   const socials = [
@@ -166,8 +166,8 @@ function ContactSection() {
       icon: <IconMail />,
       label: "Email",
       body: (
-        <a href="mailto:contact@2spconsulting.tg" className="csp-lk">
-          contact@2spconsulting.tg
+        <a href="mailto:2spcabinet@gmail.com" className="csp-lk">
+          2spcabinet@gmail.com
         </a>
       ),
     },

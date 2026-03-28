@@ -268,7 +268,7 @@ const CollecteDetail: React.FC = () => {
                       : "border-transparent opacity-60 hover:opacity-100"
                   }`}
                 >
-                  <img src={src} alt="" className="w-full h-full object-cover" />
+                  <img src={src} alt="" className="w-full h-full object-cover"  />
                 </button>
               ))}
             </div>
